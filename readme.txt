@@ -48,19 +48,19 @@ No, WooCommerce is required.
 
 = Do I need a FlickRocket account to use the plug-in? =
 
-You can test the plug-in by using the pre-installed Sandbox account. However, for productiove use you need to sign up to FlickRocket.
+You can test the plug-in by using the pre-installed Sandbox account. However, for productive use you need to sign up to FlickRocket. The free BASIC account is enough to use the plug-in.
 
 = Is there any cost for using the plug-in =
 
-The plug-in is provided free. If you want to use it, you need to sign up to a FlickRocket account. If you go with the free BASIC account there is no cost. There is a cost for the PREMIUM accouts.
+The plug-in is provided free. If you want to use it, you need to sign up to a FlickRocket account. If you go with the free BASIC account there is no cost. There is a cost for the PREMIUM accouts (ask us for details).
 
 = Which kind of content is supported by FlickRocket? =
 
-Unfortunately the space here is not enough to list all kinds of supported content. Some examples are availabel on the FlicRrocket web site. If you are unsure, just contact us.
+Unfortunately the space here is not enough to list all kinds of supported content. Some examples are available on the [FlickRocket information page](http://www.flickrocket.com/ "FlickRocket information"). If you are unsure, just contact us.
 
-= Can the content be cosumed on every platform =
+= Can the content be consumed on every platform? =
 
-At time of this wrting we support Windows, MacOSX, iOS, Android, Kindle, SmartTV and more.
+At time of this writing we support Windows, MacOSX, iOS, Android, Kindle, SmartTV and more.
 
 == Screenshots ==
 
