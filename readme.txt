@@ -56,7 +56,7 @@ The plug-in is provided free. If you want to use it, you need to sign up to a Fl
 
 = Which kind of content is supported by FlickRocket? =
 
-Unfortunately the space here is not enough to list all kinds of supported content. Some examples are available on the [FlickRocket information page](http://www.flickrocket.com/ "FlickRocket information"). If you are unsure, just contact us.
+Unfortunately the space here is not enough to list all kinds of supported content. Some examples are available on the [FlickRocket information page](https://www.flickrocket.com/en/information-en/ "FlickRocket information"). If you are unsure, just contact us.
 
 = Can the content be consumed on every platform? =
 
