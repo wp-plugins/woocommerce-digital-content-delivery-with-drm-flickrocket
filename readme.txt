@@ -28,7 +28,11 @@ This extension includes not only the backend features to set up your content but
 
 **Easy to use DRM control**
 
-You don’t need to be an expert in DRM to get your content sales up can running. DRM is applied automatically during upload and you can select from various pre-defined licenses. You can even offer customers the option to select between licenses (e.g. download-to-own or rental) at different prices.
+You don't need to be an expert in DRM to get your content sales up can running. DRM is applied automatically during upload and you can select from various pre-defined licenses. You can even offer customers the option to select between licenses (e.g. download-to-own or rental) at different prices.
+
+**More Information**
+
+For more information see [www.flickrocket.com](http://www.flickrocket.com/ "The best e-commerce platform for content")
 
 == Installation ==
 
