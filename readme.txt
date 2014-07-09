@@ -12,23 +12,21 @@ Sales and rentals of (optionally DRM protected) digital content such as DVDs, vi
 
 == Description ==
 
-#Sell and rent DRM protected digital content (DVD, video, audio, ebooks and content packages)#
-
 This extension enables you to sell and rent (optionally DRM protected) digital content such as DVDs (incl. all menus, bonus material, etc.), video (HD+SD), audio books, ebooks (epub and PDF) and packaged content such as HTML, Flash, images, etc.
 
-##Windows, MacOSX, iOS, Android, Kindle and SmartTV##
+**Windows, MacOSX, iOS, Android, Kindle and SmartTV**
 
 Customers can consume the content on virtually all platforms and access the content also on multiple devices. While doing so the content is transparently end-to-end protected and you can freely define usage time frames, device limitations, regional limitations, and much more.
 
-##Everything included for getting started##
+**Everything included for getting started**
 
 You can encode, package, encrypt and upload your content right within WooCommerce/Wordpress or use desktop software (free download for Windows and Mac) to get your content ready for sale. The content distribution is done via our content delivery network (CDN) to ensure a high bandwidth distribution to a world wide audience.
 
-##More features for content stores##
+**More features for content stores**
 
 This extension includes not only the backend features to set up your content but also shop frontend features so you can present trailers and about guiding people after the checkout. It also includes a digital locker for customer to log in and access their purchased content at a later time.
 
-##Easy to use DRM control##
+**Easy to use DRM control**
 
 You don’t need to be an expert in DRM to get your content sales up can running. DRM is applied automatically during upload and you can select from various pre-defined licenses. You can even offer customers the option to select between licenses (e.g. download-to-own or rental) at different prices.
 
