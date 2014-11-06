@@ -1,0 +1,50 @@
+#icon_shows{background-image: url("../images/fr_logo.png"); }
+.wp-core-ui .button-primary{background-color: #21759B;
+    background-image: linear-gradient(to bottom, #2A95C5, #21759B);
+    border-color: #21759B #21759B #1E6A8D;
+    box-shadow: 0 1px 0 rgba(120, 200, 230, 0.5) inset;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.options_group label.licencebox{margin-left:0px!important;}
+#_product_license_id{width:200px;}
+.button-check{background-color: #999999!important;
+    background-image: linear-gradient(to bottom, #CCC, #999999)!important;
+    border-color: #999999 #999999 #CCC!important;
+    box-shadow: 0 1px 0 #CCC inset!important;
+    color: #000!important;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+	position:inherit!important
+}
+.black_overlay{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+}
+.white_content {
+	display: none;
+	position: absolute;
+	top: 20%;
+	left: 25%;
+	width: 50%;
+	height: 200px;
+	padding: 20px 25px 10px 15px;
+	border: 6px solid orange;
+	background-color: white;
+	border-radius:15px;
+	z-index:1002;
+	overflow: auto;
+}
+.close_btn{background:url(../images/close-icon.png) no-repeat; height:30px; width:30px;right: 2px; top: 2px; position:absolute;}
+.theme_id{ width:194px;}
+#flickrocket_projectid, .flickRocketVMB{display:none;}
