@@ -108,6 +108,23 @@ class Flickrocket
 		return $ret;
 	}
 	
+	
+	//reset user password 
+	public function flickRocketResetPassword( $admin_email, $admin_pass, $theme_id, $email, $pass, $newpass ){
+	
+		$param 				= array();
+		$param['EMail'] 	= $admin_email;
+		$param['Password'] 	= $admin_pass;
+		$param['XML'] 		= '<?xml version="1.0" encoding="utf-8" ?>
+								<Customer>
+									<EMail>'.$email.'</EMail>
+									<Password>_use_only_after_external_validation_</Password>
+									<NewPassword>'.$newpass.'</NewPassword>
+								</Customer>';
+		$ret = $this->soapobj->ChangeCustomerPassword($param);
+		return $ret;
+	}
+	
 	//change user email address 
 	public function flickRocketChangeEmail( $admin_email, $admin_pass, $theme_id, $email, $pass, $newemail ){
 	
@@ -165,6 +182,34 @@ class Flickrocket
 				
 		return $fieldsValue;
 	}
+	
+	
+	//get flickrocket theme id
+	public function flickRocketThemeID(){
+		$FRObj				= new FlickRocketWooocommerce();
+		$config 			= $FRObj::get_flickrocket_config_data();		
+		
+		$param 				= array();
+		$param['EMail'] 	= $config['flickrocket_user_email'];
+		$param['Password'] 	= $config['flickrocket_user_password'];
+		
+		$fieldsValue 		= $this->soapobj->GetThemes($param);
+
+		return $fieldsValue;
+	}
+	
+	
+	//get flickrocket theme id
+	public function flickRocketThemeIDBYAjax($fr_email_address, $fr_password){
+		$param 				= array();
+		$param['EMail'] 	= $fr_email_address;
+		$param['Password'] 	= $fr_password;
+		
+		$fieldsValue 		= $this->soapobj->GetThemes($param);
+
+		return $fieldsValue;
+	}
 }
+
 
 ?>

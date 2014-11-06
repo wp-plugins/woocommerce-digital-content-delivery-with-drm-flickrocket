@@ -1,4 +1,6 @@
 <?php
+include_once('flickrocket_function.php');
+
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -27,7 +29,17 @@ class WC_Settings_FlipRocket extends WC_Settings_Page {
 	 * @return array
 	 */
 	public function get_settings() {
-	
+		
+		$flickObjT = new Flickrocket();
+		$flickRocketThemeID = $flickObjT->flickRocketThemeID();
+		$frThemeValue = $flickRocketThemeID->Themes;
+		
+		$themeIDArray = array();
+		$themeIDArray[''] = 'Select Theme ID';
+		foreach($frThemeValue->stThemes as $themeData){
+			$themeIDArray[$themeData->ID] = $themeData->Name ." ( " . $themeData->ID . " )";
+		}
+		
 		return apply_filters( 'woocommerce_' . $this->id . '_settings', array(
 			
 			array( 'title' => __( '', 'woocommerce' ), 'type' => 'title', 'desc' => __( '<div id="fr_message"></div>' ), 'id' => 'fr_message_test'),
@@ -39,6 +51,7 @@ class WC_Settings_FlipRocket extends WC_Settings_Page {
 				'desc' 		=> __( 'Email of user registered with FlickRocket with Shop Management permission', 'woocommerce' ),
 				'id' 		=> 'flickrocket_user_email',
 				'type' 		=> 'text',
+				'class'		=> 'fr_settings_fields',
 				'default'	=> '',
 				'desc_tip'	=> true,
 			),
@@ -48,15 +61,18 @@ class WC_Settings_FlipRocket extends WC_Settings_Page {
 				'desc' 		=> __( 'Flickrocket user password.', 'woocommerce' ),
 				'id' 		=> 'flickrocket_user_password',
 				'type' 		=> 'password',
+				'class'		=> 'fr_settings_fields',
 				'default'	=> '',
 				'desc_tip'	=> true,
 			),
 
 			array(
-				'title' => __( 'Theme ID', 'woocommerce' ),
-				'desc' 		=> __( 'Unique Theme ID (see FlickRocket -> Shop -> Themes)', 'woocommerce' ),
+				'title' => __( 'Theme', 'woocommerce' ),
+				'desc' 		=> __( 'Themes are managed in FlickRocket under (Shop -> Themes)', 'woocommerce' ),
 				'id' 		=> 'flickrocket_theme_id',
-				'type' 		=> 'text',
+				'type' 		=> 'select',
+				'class'		=> 'theme_id',
+				'options' 	=> $themeIDArray,
 				'default'	=> '',
 				'desc_tip'	=> true,
 			),

@@ -3,7 +3,7 @@ Contributors: FlickRocket
 Donate link: http://flickrocket.com/
 Tags: video, audio, ebook, DRM, content, digital rights management, apps, iOS, Android, Windows, MacOSX, Kindle, SmartTV
 Requires at least: 3.0.1
-Tested up to: 3.9.1
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -80,8 +80,17 @@ At time of this writing we support Windows, MacOSX, iOS, Android, Kindle, SmartT
 = 1.0 =
 * Public release version
 
+= 1.1 =
+* UI cleanup
+* Theme selection as drop down
+* Reset password functionality added
+
 == Upgrade Notice ==
 
 = 1.0 =
 Public release version
 
+= 1.1 =
+* UI cleanup
+* Theme selection as drop down
+* Reset password functionality added

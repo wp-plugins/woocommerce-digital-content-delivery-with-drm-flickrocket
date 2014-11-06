@@ -3,7 +3,7 @@
 	Plugin Name: WooCommerce Digital Content Delivery (incl. DRM) - FlickRocket
 	Plugin URI: http://www.flickrocket.com/
 	Description: Enable sales and rentals of (optionally DRM protected) digital content such as DVDs, video (HD+SD), audio books, ebooks  (epub and PDF) and packaged content such as HTML, Flash, images, etc. Includes CDN, customizable player/reader, tracking and much more. Supports PC, Mac, iOS, Android, Kindle and SmartTVs.
-	Version: 1.0
+	Version: 1.1
 	Author: FlickRocket
 	Author URI: http://www.flickrocket.com/
 	License: ***********
@@ -12,7 +12,7 @@
 	if(session_id() == '')
 		session_start();
 	
-	error_reporting(0);
+	//error_reporting(0);
 	
 	global $wpdb, $FlickPluginCurrentVersion;
 			
@@ -24,7 +24,7 @@
 	
 	define( 'FILE_NAME' , __FILE__ );
 	 	
-	add_action( 'init', 'initialize',100 );
+	add_action( 'init', 'initialize', 10 );
 	
 	add_action( 'plugins_loaded', 'flick_myplugin_init' );
 	
@@ -61,6 +61,7 @@
 			
 		}
 	}
+
 			
 	
 	// Check if WooCommerce is active
@@ -75,6 +76,10 @@
 	
 		global $wpdb, $FlickPluginCurrentVersion;
 		
+		update_option( 'flickrocket_user_email', 'sandbox@flickrocket.com' );
+		
+		update_option( 'flickrocket_user_password', 'sandbox1971' );
+				
 		update_option( 'sandbox_active', 'yes', '', 'yes' );
 	}
 	
@@ -165,8 +170,8 @@
 														<li><strong>FlickRocket Error </strong><div>The password you have specified does not match the records of the digital delivery backend for your email. To access all your content one account, you need to use the same password as you have with the following services:</div><div style="margin-top:5px;">&raquo; ' . $companyNameS . '</div></li>
 					
 													</ul>',
-						'refresh' 	=> isset( WC()->session->refresh_totals ) ? 'true' : 'false',
-						'reload'    => isset( WC()->session->reload_checkout ) ? 'true' : 'false'
+						//'refresh' 	=> isset( WC()->session->refresh_totals ) ? 'true' : 'false',
+						//'reload'    => isset( WC()->session->reload_checkout ) ? 'true' : 'false'
 					)
 				) . '<!--WC_END-->';
 			
@@ -219,4 +224,78 @@
 		
 		return 'completed'; //$order_status;
 	}	
+	
+	
+	// add filckrocket custom checkbox	
+	add_filter( 'product_type_options', 'rr_add_custom_product_type' );
+	function rr_add_custom_product_type( $types ){
+		$types[ 'flickrocket' ] = array(
+				'id'            => '_flickrocket',
+				'wrapper_class' => 'show_if_simple',
+				'label'         => __( 'FlickRocket', 'woocommerce' ),
+				'description'   => __( 'FlickRocket products allow DRM protected digital content access.', 'woocommerce' ),
+				'default'       => 'no'
+			);
+		return $types;
+	}	
+	
+	
+	add_filter( 'woocommerce_variation_options', 'get_data_variation' );
+
+
+	function get_data_variation($loop){
+		global $woocommerce;
+		
+		// Get variations
+		$args = array(
+			 'post_type'     => 'product_variation',
+			 'post_status'   => array( 'private', 'publish' ),
+			 'numberposts'   => -1,
+			 'orderby'       => 'menu_order',
+			 'order'         => 'asc',
+			 'post_parent'   => get_the_ID()
+		 );
+		
+		$variations = get_posts( $args );
+		
+		
+		foreach ( $variations as $key=>$variation ) {
+			
+			$variation_id  = absint( $variation->ID );
+			$VMBData[$key] = get_post_meta( $variation_id, '_vri_flickrocket', true);
+		}
+		
+	?>
+		
+		<label><input type="checkbox" class="checkbox checkBoxVMB" id="checkBoxVMB_<?php echo $loop; ?>" alt="<?php echo $loop; ?>" name="variable_is_flickrocket[<?php echo $loop; ?>]" <?php echo ($VMBData[$loop] == '' || $VMBData[$loop] == 'no') ? '' : 'checked'; ?> /> <?php _e( 'FlickRocket', 'woocommerce' ); ?> <a class="tips" data-tip="<?php _e( 'FlickRocket products allow DRM protected digital content access.', 'woocommerce' ); ?>" href="#">[?]</a></label>
+        
+    <?php    
+	}
+	
+	add_action( 'password_reset', 'change_wordpress_and_flickrocket_password', 100);
+	
+	function change_wordpress_and_flickrocket_password( $userData ){
+		
+		$newPsw 	= $_REQUEST['password_1'];
+		
+		$emailID    = $userData->user_email;
+		
+		$config 	= FlickRocketWooocommerce::get_flickrocket_config_data();		
+	
+		$flickRAdminEmail	= $config['flickrocket_user_email']; 
+	
+		$flickRAdminPass	= $config['flickrocket_user_password'];
+	
+		$flickRThemeID		= $config['flickrocket_theme_id'];
+		
+		if($emailID != ''){
+			
+			$changeEmail = FlickRocketWooocommerce::$flickObj->flickRocketResetPassword( $flickRAdminEmail, $flickRAdminPass, $flickRThemeID, $emailID, '', $newPsw  );
+			
+			if($changeEmail->ErrorCode == 0){
+				update_user_meta( $userData->ID, FlickRocketWooocommerce::$flickrocket_password_key, $newPsw );
+			}
+		}
+	}
+	
 ?>
