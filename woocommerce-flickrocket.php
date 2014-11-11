@@ -3,7 +3,7 @@
 	Plugin Name: WooCommerce Digital Content Delivery (incl. DRM) - FlickRocket
 	Plugin URI: http://www.flickrocket.com/
 	Description: Enable sales and rentals of (optionally DRM protected) digital content such as DVDs, video (HD+SD), audio books, ebooks  (epub and PDF) and packaged content such as HTML, Flash, images, etc. Includes CDN, customizable player/reader, tracking and much more. Supports PC, Mac, iOS, Android, Kindle and SmartTVs.
-	Version: 1.1
+	Version: 1.2
 	Author: FlickRocket
 	Author URI: http://www.flickrocket.com/
 	License: ***********
@@ -264,10 +264,8 @@
 			$variation_id  = absint( $variation->ID );
 			$VMBData[$key] = get_post_meta( $variation_id, '_vri_flickrocket', true);
 		}
-		
 	?>
-		
-		<label><input type="checkbox" class="checkbox checkBoxVMB" id="checkBoxVMB_<?php echo $loop; ?>" alt="<?php echo $loop; ?>" name="variable_is_flickrocket[<?php echo $loop; ?>]" <?php echo ($VMBData[$loop] == '' || $VMBData[$loop] == 'no') ? '' : 'checked'; ?> /> <?php _e( 'FlickRocket', 'woocommerce' ); ?> <a class="tips" data-tip="<?php _e( 'FlickRocket products allow DRM protected digital content access.', 'woocommerce' ); ?>" href="#">[?]</a></label>
+		<label><input type="checkbox" class="checkbox checkBoxVMB" id="checkBoxVMB_<?php echo $loop; ?>" alt="<?php echo $loop; ?>" name="variable_is_flickrocket[<?php echo $loop; ?>]" <?php echo ($VMBData[$loop] == '' || $VMBData[$loop] == 'no' || get_the_ID() == '') ? '' : 'checked'; ?> /> <?php _e( 'FlickRocket', 'woocommerce' ); ?> <a class="tips" data-tip="<?php _e( 'FlickRocket products allow DRM protected digital content access.', 'woocommerce' ); ?>" href="#">[?]</a></label>
         
     <?php    
 	}

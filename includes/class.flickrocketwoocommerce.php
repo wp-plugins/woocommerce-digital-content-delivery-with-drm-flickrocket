@@ -1,6 +1,7 @@
 <?php
 	if(!session_id()){ ob_start(); session_start();}
-	 class FlickRocketWooocommerce{
+	
+	class FlickRocketWooocommerce{
 	
 		public static $flickObj;
 		
@@ -675,7 +676,7 @@
 	}
 	
 	
-	if($_REQUEST['fr_action'] == 'get_theme_id'){
+	if(isset($_REQUEST['fr_action']) && $_REQUEST['fr_action'] == 'get_theme_id'){
 		$FlickrocketObj 		= new Flickrocket();
 		$counter 				= 0;
 		$fr_email_address 		= $_REQUEST['fr_email'];
@@ -702,7 +703,7 @@
 	}
 	
 	
-	if($_REQUEST['fr_action'] == 'check_fr'){ 
+	if(isset($_REQUEST['fr_action']) && $_REQUEST['fr_action'] == 'check_fr'){ 
 		
 		$FlickrocketObj 								= new Flickrocket();
 	
@@ -717,7 +718,7 @@
 		echo $FRResult 	= $FlickrocketObj->flickRocketCheckAccount();		
 	}
 
-	if($_REQUEST['fr_action'] == 'save_fr'){ 
+	if(isset($_REQUEST['fr_action']) && $_REQUEST['fr_action'] == 'save_fr'){ 
 		
 		$FlickrocketObj 								= new Flickrocket();
 	

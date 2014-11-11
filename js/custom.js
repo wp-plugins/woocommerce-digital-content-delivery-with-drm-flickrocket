@@ -177,7 +177,7 @@ jQuery(document).ready(function(){
 	
 	if(jQuery('#product-type').val() == 'variable'){
 		setTimeout(function(){
-			if(flickRCB >= 0){
+			if(flickRCB > 0){
 				jQuery('#flickrocket_projectid').show();
 			}else{
 				('#flickrocket_projectid').hide();

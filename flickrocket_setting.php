@@ -89,7 +89,7 @@ class WC_Settings_FlipRocket extends WC_Settings_Page {
 
 			array( 'type' => 'sectionend', 'id' => 'account_registration_options'),
 			
-			array( 'title' => __( '', 'woocommerce' ), 'type' => 'title', 'desc' => __( '<div style="margin-left:235px;" class="button-check button-primary" id="check_fr_details">Check</div>', 'woocommerce' ), 'id' => 'fr_account_page_options' ),
+			array( 'title' => __( '', 'woocommerce' ), 'type' => 'title', 'desc' => __( '<div style="margin-left:235px;" class="button button-primary" id="check_fr_details">Check</div>', 'woocommerce' ), 'id' => 'fr_account_page_options' ),
 			
 			array( 'title' => __( '', 'woocommerce' ), 'type' => 'title', 'desc' => __( "If you don't have a FlickRocket account yet, you can sign up to your <a href='http://www.flickrocket.com/' target='_blank'>free account here</a>.", 'woocommerce' ), 'id' => 'fr_account_page_options' ),
 			

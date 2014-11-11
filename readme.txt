@@ -32,8 +32,8 @@ You don't need to be an expert in DRM to get your content sales up can running. 
 
 **More Information**
 
-For more information about FlickRocket see [www.flickrocket.com](http://www.flickrocket.com/ "The best e-commerce platform for content")
-For more information about the plug-in see [https://www.flickrocket.com/en/information/3rd-party-carts/woocommerce-wordpress-extension/woocommerce-guide] (https://www.flickrocket.com/en/information/3rd-party-carts/woocommerce-wordpress-extension/woocommerce-guide/ "FlickRocket Guide to WooCommerce Plug-In")
+For more information about FlickRocket see [www.flickrocket.com](http://www.flickrocket.com/ "The best e-commerce platform for content").
+For more information about the plug-in see [www.flickrocket.com/en/information/3rd-party-carts/woocommerce-wordpress-extension/woocommerce-guide] (http://www.flickrocket.com/en/information/3rd-party-carts/woocommerce-wordpress-extension/woocommerce-guide/ "FlickRocket Guide to WooCommerce Plug-In")
 
 == Installation ==
 
@@ -86,6 +86,9 @@ At time of this writing we support Windows, MacOSX, iOS, Android, Kindle, SmartT
 * Theme selection as drop down
 * Reset password functionality added
 
+= 1.2 =
+* UI cleanup
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -95,3 +98,6 @@ Public release version
 * UI cleanup
 * Theme selection as drop down
 * Reset password functionality added
+
+= 1.2 =
+* UI cleanup
