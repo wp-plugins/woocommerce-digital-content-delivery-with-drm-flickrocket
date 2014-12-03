@@ -36,8 +36,16 @@ class WC_Settings_FlipRocket extends WC_Settings_Page {
 		
 		$themeIDArray = array();
 		$themeIDArray[''] = 'Select Theme ID';
-		foreach($frThemeValue->stThemes as $themeData){
+		
+		if(count($frThemeValue->stThemes) == 1){
+			$themeData = $frThemeValue->stThemes;
 			$themeIDArray[$themeData->ID] = $themeData->Name ." ( " . $themeData->ID . " )";
+		}else if(count($frThemeValue->stThemes) <= 0){
+			
+		}else{
+			foreach($frThemeValue->stThemes as $themeData){
+				$themeIDArray[$themeData->ID] = $themeData->Name ." ( " . $themeData->ID . " )";
+			}
 		}
 		
 		return apply_filters( 'woocommerce_' . $this->id . '_settings', array(

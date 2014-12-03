@@ -330,11 +330,16 @@
 						echo '<select id="variations_license_id" name="variations_license_id[' . $loop . ']">';
 						
 						echo '<option value=""> - - Select License - - </option>';
-						
-						foreach($getLicenseSB->Licenses->stLicense as $sbValue){
-						
+						if(count($getLicenseSB->Licenses->stLicense) > 0){
+							foreach($getLicenseSB->Licenses->stLicense as $sbValue){
+							
+								$selectedField = $sbValue->ID == $variation_data['_variations_license_id'][0] ? 'selected' : '';
+							
+								echo '<option value="' . $sbValue->ID . '" ' . $selectedField . '>' . $sbValue->Name . '</option>';
+							}
+						}else{
+							$sbValue = $getLicenseSB->Licenses->stLicense;
 							$selectedField = $sbValue->ID == $variation_data['_variations_license_id'][0] ? 'selected' : '';
-						
 							echo '<option value="' . $sbValue->ID . '" ' . $selectedField . '>' . $sbValue->Name . '</option>';
 						}
 						
@@ -683,6 +688,7 @@
 		$fr_password 			= $_REQUEST['fr_password'];
 		$responseData 			= array();
 		$themeDataArray 		= $FlickrocketObj->flickRocketThemeIDBYAjax($fr_email_address, $fr_password);
+		
 		if($themeDataArray->GetThemesResult == 1){
 			if(count($themeDataArray->Themes->stThemes) > 1){
 				foreach($themeDataArray->Themes->stThemes as $themeDetails){

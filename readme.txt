@@ -78,26 +78,33 @@ At time of this writing we support Windows, MacOSX, iOS, Android, Kindle, SmartT
 
 == Changelog ==
 
+= 1.3
+* Minor bug fix for accounts without projects/themes
+
+= 1.2 =
+* UI cleanup
+
+= 1.1 =
+* UI cleanup
+* Theme selection as drop down
+* Reset password functionality added
+
 = 1.0 =
 * Public release version
 
-= 1.1 =
-* UI cleanup
-* Theme selection as drop down
-* Reset password functionality added
-
-= 1.2 =
-* UI cleanup
-
 == Upgrade Notice ==
 
-= 1.0 =
-Public release version
+= 1.3
+* Minor bug fix for account without projects/themes
+
+= 1.2 =
+* UI cleanup
 
 = 1.1 =
 * UI cleanup
 * Theme selection as drop down
 * Reset password functionality added
 
-= 1.2 =
-* UI cleanup
+= 1.0 =
+* Public release version
+

@@ -158,7 +158,13 @@ class Flickrocket
 		
 		$selectBox = '<select name="' . $fieldName . '"><option value=""> -- Select Project ID -- </option>';
 		
-		foreach($fieldsValue->Projects->stProject as $sbValue){
+		if(count($fieldsValue->Projects) > 1){
+			foreach($fieldsValue->Projects->stProject as $sbValue){
+				$selectedField = $sbValue->LongProjectID == $selectedValue ? 'selected' : '';
+				$selectBox .= '<option value="' . $sbValue->LongProjectID . '" ' . $selectedField . '>' . $sbValue->Name . ' (' . $sbValue->LongProjectID . ') </option>';
+			}
+		}else{
+			$sbValue = $fieldsValue->Projects->stProject;
 			$selectedField = $sbValue->LongProjectID == $selectedValue ? 'selected' : '';
 			$selectBox .= '<option value="' . $sbValue->LongProjectID . '" ' . $selectedField . '>' . $sbValue->Name . ' (' . $sbValue->LongProjectID . ') </option>';
 		}
