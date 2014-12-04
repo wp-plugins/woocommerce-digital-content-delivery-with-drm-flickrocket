@@ -3,7 +3,7 @@
 	Plugin Name: WooCommerce Digital Content Delivery (incl. DRM) - FlickRocket
 	Plugin URI: http://www.flickrocket.com/
 	Description: Enable sales and rentals of (optionally DRM protected) digital content such as DVDs, video (HD+SD), audio books, ebooks  (epub and PDF) and packaged content such as HTML, Flash, images, etc. Includes CDN, customizable player/reader, tracking and much more. Supports PC, Mac, iOS, Android, Kindle and SmartTVs.
-	Version: 1.2
+	Version: 1.3
 	Author: FlickRocket
 	Author URI: http://www.flickrocket.com/
 	License: ***********
