@@ -469,9 +469,16 @@
 						if( $_SESSION['flickRocketPrepareLoginEx'] <= 1 ){
 							$_SESSION['digital_button_link'] = '';
 							$custonerData 	= self::$flickObj->flickRocketPrepareLoginEx( $flickRAdminEmail, $flickRAdminPass, $flickRThemeID, $flickRUserEmail, $flickRUserPSW );
-										
+							
+							$pos = strpos($custonerData->sURL, 'http');
+							if($pos === false){
+								$httpVal = 'http://';
+							}else{
+								$httpVal = '';
+							}
+							
 							if ($custonerData->ErrorCode == 0 && $custonerData->sURL != '')
-								echo '<a class="button button-primary" target="_blank" href="http://'.$custonerData->sURL.'">Digital Content</a>';
+								echo '<a class="button button-primary" target="_blank" href="'.$httpVal.$custonerData->sURL.'">Digital Content</a>';
 								$_SESSION['digital_button_link'] = $custonerData->sURL;
 								
 							if ($custonerData->ErrorCode < 0)
@@ -602,9 +609,16 @@
 					if ($createorder->ErrorCode == 0)
 					{
 						$custonerData 	= self::$flickObj->flickRocketPrepareLoginEx( $flickRAdminEmail, $flickRAdminPass, $flickRThemeID, $flickRUserEmail, $flickRUserPSW );
+						
+						$pos = strpos($custonerData->sURL, 'http');
+						if($pos === false){
+							$httpVal = 'http://';
+						}else{
+							$httpVal = '';
+						}
 												
 						if ($custonerData->ErrorCode == 0 && $custonerData->sURL != '')
-							echo '<div style="clear:both; padding-bottom:15px;"><div style="float:left; width:60%;">To access the digital content you have ordered:</div><div style="float:left;"> <a class="button button-primary" target="_blank" href="http://'.$custonerData->sURL.'">Digital Content</a></div></div><div style="clear:both;">&nbsp;</div>';
+							echo '<div style="clear:both; padding-bottom:15px;"><div style="float:left; width:60%;">To access the digital content you have ordered:</div><div style="float:left;"> <a class="button button-primary" target="_blank" href="'.$httpVal.$custonerData->sURL.'">Digital Content</a></div></div><div style="clear:both;">&nbsp;</div>';
 							
 						if ($custonerData->ErrorCode < 0){
 							if ($custonerData->ErrorCode == -1)

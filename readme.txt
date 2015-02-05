@@ -78,6 +78,9 @@ At time of this writing we support Windows, MacOSX, iOS, Android, Kindle, SmartT
 
 == Changelog ==
 
+= 1.4
+* Minor bug fix in domain handling
+
 = 1.3
 * Minor bug fix for accounts without projects/themes
 
@@ -93,6 +96,9 @@ At time of this writing we support Windows, MacOSX, iOS, Android, Kindle, SmartT
 * Public release version
 
 == Upgrade Notice ==
+
+= 1.4
+* Minor bug fix in domain handling
 
 = 1.3
 * Minor bug fix for account without projects/themes
