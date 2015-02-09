@@ -30,6 +30,8 @@
 			
 			add_action( 'user_register', array( get_class(), 'flickrocket_registration_save' ) );
 			
+			add_action( 'woocommerce_after_my_account', array( get_class(), 'flickrocket_iframe_my_account' ) );
+			
 			if ( is_user_logged_in() ) {			
 				add_action( 'profile_update', array( get_class(), 'update_wordpress_and_flickrocket_password' ), 15);
 			}	
@@ -43,6 +45,10 @@
 			self::$flickObj	=	new Flickrocket($config['flickrocket_use_sandbox']); 
 			
 			$_SESSION['flickRocketPrepareLoginEx']	=  1;
+		}
+		
+		public static function flickrocket_iframe_my_account($user){
+			echo '<div style="width:93%; margin:50px auto;"><iframe src="https://plugins.flickrocket.com/Login.aspx?Hash=68b56f50-7088-415c-a90d-7fd637d2d15a" target="_blank" style="width:99%; height:600px;"></iframe>';
 		}
 		
 		//update email address and password on wordpress and flickrocket section.
@@ -618,7 +624,7 @@
 						}
 												
 						if ($custonerData->ErrorCode == 0 && $custonerData->sURL != '')
-							echo '<div style="clear:both; padding-bottom:15px;"><div style="float:left; width:60%;">To access the digital content you have ordered:</div><div style="float:left;"> <a class="button button-primary" target="_blank" href="'.$httpVal.$custonerData->sURL.'">Digital Content</a></div></div><div style="clear:both;">&nbsp;</div>';
+							//echo '<div style="clear:both; padding-bottom:15px;"><div style="float:left; width:60%;">To access the digital content you have ordered:</div><div style="float:left;"> <a class="button button-primary" target="_blank" href="'.$httpVal.$custonerData->sURL.'">Digital Content</a></div></div><div style="clear:both;">&nbsp;</div>';
 							
 						if ($custonerData->ErrorCode < 0){
 							if ($custonerData->ErrorCode == -1)

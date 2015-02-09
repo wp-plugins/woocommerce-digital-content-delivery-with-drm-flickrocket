@@ -78,6 +78,9 @@ At time of this writing we support Windows, MacOSX, iOS, Android, Kindle, SmartT
 
 == Changelog ==
 
+= 1.5
+* Replaced "Content Access" text and botton with player access iframe 
+
 = 1.4
 * Minor bug fix in domain handling
 
@@ -96,6 +99,9 @@ At time of this writing we support Windows, MacOSX, iOS, Android, Kindle, SmartT
 * Public release version
 
 == Upgrade Notice ==
+
+= 1.5
+* Replaced "Content Access" text and botton with player access iframe 
 
 = 1.4
 * Minor bug fix in domain handling
