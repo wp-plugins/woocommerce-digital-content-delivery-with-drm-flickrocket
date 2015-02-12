@@ -34,6 +34,7 @@ You don't need to be an expert in DRM to get your content sales up can running. 
 
 For more information about FlickRocket see [www.flickrocket.com](https://www.flickrocket.com/ "The best e-commerce platform for content").
 For more information about the plug-in see [www.flickrocket.com/en/woocommerce-extension](https://www.flickrocket.com/en/woocommerce-extension/ "FlickRocket Guide to WooCommerce Plug-In")
+For a video about how the plugin is obtained, installed, configured and used, see [youtu.be/946I_6BPx0c](http://youtu.be/946I_6BPx0c "WooCommerce/Wordpress digital content sales with DRM using FlickRocket")
 
 == Installation ==
 
