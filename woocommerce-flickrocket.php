@@ -222,7 +222,7 @@
 		
 		// non-virtual order, return original status
 		
-		return 'completed'; //$order_status;
+		return $order_status;
 	}	
 	
 	

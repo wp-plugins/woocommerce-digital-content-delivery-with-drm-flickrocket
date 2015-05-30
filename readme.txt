@@ -79,6 +79,9 @@ At time of this writing we support Windows, MacOSX, iOS, Android, Kindle, SmartT
 
 == Changelog ==
 
+= 1.6
+* Fixed for order status issue with non-digital products
+
 = 1.5
 * Replaced "Content Access" text and botton with player access iframe 
 
@@ -100,6 +103,9 @@ At time of this writing we support Windows, MacOSX, iOS, Android, Kindle, SmartT
 * Public release version
 
 == Upgrade Notice ==
+
+= 1.6
+* Fixed for order status issue with non-digital products
 
 = 1.5
 * Replaced "Content Access" text and botton with player access iframe 

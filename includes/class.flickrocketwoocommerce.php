@@ -606,7 +606,7 @@
 				update_post_meta($orderID, 'digital_button_link', 1);
 			}
 			
-			if($orderStatus == 'completed' || $orderStatus == 'pending'){
+			if($orderStatus == 'completed' || $orderStatus == 'pending' || $orderStatus == 'processing'){
 				
 				if($flickproduct)
 				{
